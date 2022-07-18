@@ -1,43 +1,24 @@
 import React from 'react';
-import styled from 'styled-components';
-import MenuBar from './MenuBar/MenuBar';
-import ToolsBar from './ToolsBar/ToolsBar';
-
-const SubDiv = styled.div`
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 0 20px;
-
-  @media (min-width: 970px) {
-    max-width: 85rem;
-    padding: 0 40px;
-  }
-`;
-
-const MainDiv = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-`;
+import MenuBar from 'components/MenuBar/MenuBar';
+import ToolsBar from 'components/ToolsBar/ToolsBar';
+import * as styles from './nav-bar.styles';
 
 /**
- * Component for showing the navbar which contains menubar and toolsbar
+ * Render NavBAr component.
  *
- * @component
+ * @return {JSX.Element}
  */
 
 function NavBar() {
   return (
-    <MainDiv>
-      <SubDiv>
-        <MenuBar />
-        <ToolsBar />
-      </SubDiv>
-    </MainDiv>
+    <styles.Header>
+      <styles.MainContainer>
+        <styles.SubContainer>
+          <MenuBar />
+          <ToolsBar />
+        </styles.SubContainer>
+      </styles.MainContainer>
+    </styles.Header>
   );
 }
 
